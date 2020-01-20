@@ -128,6 +128,7 @@ export const Container = styled.div`
         right: 0;
         .icon{
           color: #fff;
+          background: rgb(0,0,0, 0.5);
         }
         .icon:hover{
           cursor: pointer;
