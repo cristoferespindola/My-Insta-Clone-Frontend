@@ -21,18 +21,11 @@ export default function UserProfile() {
   }, []);
 
   async function handleDelete(id) {
-    try {
-
-      await api.post(`/deletepost/${id}`, {
+    await api.post(`/deletepost/${id}`, {
         headers: token()
       });
-      window.history.back();
-    } catch (err) {
-      setError("Not found");
-    }
-  }
-
-
+      window.location.reload(false);
+    } 
 
   return (
     <Container content>
