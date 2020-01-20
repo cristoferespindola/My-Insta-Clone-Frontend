@@ -29,7 +29,7 @@ export default function SignIn({ history }) {
         history.push(`/feed`);
       } catch (err) {
         setError(
-          "There was a problem with login, please check your credentials. T.T"
+          "There was a problem with login, please check your credentials."
         );
       }
     }
