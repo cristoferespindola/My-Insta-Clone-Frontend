@@ -5,7 +5,9 @@ export const Container = styled.div`
   margin-top: 50px;
   padding-top: 0px;
 
-  .div1 {
+  .center {
+    margin-left: auto;
+    margin-right: auto;
     .empty {
       display: flex;
       text-align: center;
@@ -16,10 +18,6 @@ export const Container = styled.div`
       margin-right: 230px;
       margin-left: 50px;
     }
-  }
-
-  .div2 {
-    margin-left: 150px;
   }
 `;
 

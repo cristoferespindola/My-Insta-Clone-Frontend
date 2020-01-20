@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+
+import api from "../../services/api";
+import { token } from "../../utils/utils";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
-import api from "../../services/api";
-import { token } from "../../utils/utils";
 
-const useStyles = makeStyles(theme => ({
+const localsStyle = makeStyles(theme => ({
   card: {
     width: 600,
     maxWidth: 600
@@ -16,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   media: {
     width: 600,
     height: 400,
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "55%" 
   },
   expand: {
     transform: "rotate(0deg)",
@@ -37,25 +39,25 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function CardUser() {
-  const classes = useStyles();
+  const classes = localsStyle();
 
-  const [publi, setPubli] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    async function loadPubli() {
+    async function loadPosts() {
       const response = await api.get("/posts", {
         headers: token()
       });
-      setPubli(response.data);
+      setPosts(response.data);
     }
-    loadPubli();
+    loadPosts();
   }, []);
 
   return (
     <>
-      {publi.length > 0 ? (
+      {posts.length > 0 ? (
         <>
-          {publi.map(pu => (
+          {posts.map(pu => (
             <Card
               key={pu._id}
               className={classes.card}
@@ -88,7 +90,7 @@ export default function CardUser() {
           ))}
         </>
       ) : (
-        <div className="empty">No Picture :(</div>
+        <div className="empty">No publications</div>
       )}
     </>
   );

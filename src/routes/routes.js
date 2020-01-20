@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import Login from "../../src/pages/SignIn";
-import Registre from "../../src/pages/SignUp";
-import Feed from "../../src/pages/Feed";
-import Profile from "../../src/pages/Profile";
-import Add from "../../src/pages/AddPubli";
+import Login from "../pages/SignIn";
+import Register from "../pages/SignUp";
+import Feed from "../pages/Feed";
+import Profile from "../pages/Profile";
+import NewPost from "../pages/NewPost";
 
 import { isAuthenticated } from "../services/auth";
 
@@ -27,10 +27,10 @@ export default function routes() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route path="/signup" component={Registre} />
+        <Route path="/signup" component={Register} />
         <PrivateRoute path="/feed" component={Feed} />
         <PrivateRoute path="/profile" component={Profile} />
-        <PrivateRoute path="/posts" component={Add} />
+        <PrivateRoute path="/posts" component={NewPost} />
         <Route path="*" component={() => <h1>Page not found</h1>} />
       </Switch>
     </BrowserRouter>

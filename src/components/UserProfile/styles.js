@@ -15,6 +15,18 @@ export const Container = styled.div`
         flex-basis: 0;
         -webkit-box-flex: 1;
         flex-grow: 1;
+        img {
+          width: auto;
+          height: auto;
+          margin-bottom: 15px;
+        }
+      }
+
+      .avatarInline { 
+        img{
+          width: 25px;
+          height: 25px; 
+        }      
       }
 
       section {
@@ -26,7 +38,7 @@ export const Container = styled.div`
         min-width: 0;
       }
 
-      section .infoP {
+      section .title {
         display: flex;
         -webkit-box-align: center;
         align-items: center;
@@ -38,7 +50,7 @@ export const Container = styled.div`
         margin-bottom: 20px;
       }
 
-      section .infoP h3 {
+      section .title h3 {
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -49,7 +61,7 @@ export const Container = styled.div`
         font-weight: 300;
       }
 
-      section .infoP button {
+      section .title button {
         flex-shrink: 0;
         margin-left: 20px;
         padding: 6px;
@@ -78,14 +90,14 @@ export const Container = styled.div`
         cursor: pointer;
       }
 
-      section .infoB {
+      section .bio {
         font-size: 16px;
         line-height: 24px;
         word-wrap: break-word;
         display: block;
       }
 
-      section .infoB h3 {
+      section .bio h3 {
         font-size: 18px;
         font-weight: 600;
       }
@@ -107,18 +119,29 @@ export const Container = styled.div`
         display: flex;
         justify-content: center;
         flex-direction: row;
-        margin: 28px 0;
         padding: 0;
+        position: relative;
       }
 
-      article div {
+      article span {
+        position: absolute;
+        right: 0;
+        .icon{
+          color: #fff;
+        }
+        .icon:hover{
+          cursor: pointer;
+        }
+      }
+
+      article div.card {
         width: 100%;
         max-height: 239px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
       }
-      article div img {
+      article div img.postImg {
         height: 239px;
         width: 100%;
       }

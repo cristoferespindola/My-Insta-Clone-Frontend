@@ -6,6 +6,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Container, Img, Box } from "./styles";
 
 import { logout } from "../../services/auth";
+const logo = require('../../assets/img/logo.png')
 
 export default function Headers() {
   function hendleLogout() {
@@ -17,7 +18,7 @@ export default function Headers() {
         <Link style={{ textDecoration: 'none' }} to="/feed">
           <Img
             alt=""
-            src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-17.png"
+            src={logo}
           />
         </Link>
         <Link  to="/">

@@ -3,7 +3,7 @@ import api from "../../services/api";
 import { token } from "../../utils/utils";
 import { Container } from "./styles";
 
-export default function Outline() {
+export default function Info() {
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [bio, setBio] = useState("");
@@ -31,20 +31,15 @@ export default function Outline() {
     <Container info>
       <div className="avatar">
         <img
-          style={{
-            width: "100%",
-            height: 175,
-            marginBottom: 15
-          }}
           alt="avatar"
           src={avatar}
         />
       </div>
       <section>
-        <div className="infoP">
+        <div className="title">
           <h3>{username}</h3>
         </div>
-        <div className="infoB">
+        <div className="bio">
           <h3>{name}</h3>
           <span>{bio}</span>
         </div>

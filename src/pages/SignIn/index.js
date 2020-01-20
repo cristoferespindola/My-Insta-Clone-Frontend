@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import { Link } from "react-router-dom";
 
 import api from "../../services/api";
@@ -6,6 +6,8 @@ import api from "../../services/api";
 import { login } from "../../services/auth";
 
 import { Container, Box, Form, Input, Button, Span } from "./styles";
+const logo = require('../../assets/img/logo.png')
+const loginImage = require('../../assets/img/home.png')
 
 export default function SignIn({ history }) {
   const [username, setUsername] = useState("");
@@ -34,11 +36,14 @@ export default function SignIn({ history }) {
   }
   return (
     <Container>
+    <div>
+    <img src={loginImage}/>
+    </div>
       <Box>
         <Box textTop>
           <img
             alt=""
-            src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-17.png"
+            src={logo}
           />
         </Box>
         <Form onSubmit={handleSingIn}>
@@ -47,13 +52,13 @@ export default function SignIn({ history }) {
             value={username}
             onChange={e => setUsername(e.target.value)}
             type="name"
-            placeholder="Username"
+            placeholder="username"
           />
           <Input
             value={password}
             onChange={e => setPassword(e.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder="password"
           />
           <Button>Access</Button>
         </Form>

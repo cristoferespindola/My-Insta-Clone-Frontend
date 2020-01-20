@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import api from "../../services/api";
 import { login } from "../../services/auth";
 import { Container, Box, Form, Input, Button, Span } from "./styles";
+
+const logo = require('../../assets/img/logo.png')
 
 export default function SignUp({ history }) {
   const [name, setName] = useState("");
@@ -28,7 +31,7 @@ export default function SignUp({ history }) {
         <Box textTop>
           <img
             alt=""
-            src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-17.png"
+            src={logo}
           />
         </Box>
         <Form onSubmit={handleSignUp}>
